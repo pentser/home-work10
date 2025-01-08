@@ -1,13 +1,13 @@
 //*********************************************** */
 //  exesice 1
-import { readFile, writeFile } from "node:fs";
-import fs from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
-async function exes1() {
+
+export async function exes1() {
     
     try {
-        const data=await readFile("./input-1.txt","utf8");
-        console.log(JSON.parse(data))
+        const data=await readFile("./twentyexesices/input-1.txt");
+        console.log(data);
         
     }
     catch (err) {
@@ -15,16 +15,18 @@ async function exes1() {
     }
     
 }
-exes1();
+
+
+
 
 //*********************************************** */
 //  exesice 2
-async function exes2() {
+export async function exes2() {
     
     try {
         const data= "ng Node.js is fun!";
-        await writeFile("./output-2.txt", JSON.stringify(data));
-        
+        await writeFile("./twentyexesices/output-2.txt", JSON.stringify(data));
+       
         
         
     }
@@ -33,16 +35,26 @@ async function exes2() {
         console.log(err);
         
     }
-    
 }
-exes2();
+
+
 //*********************************************** */
 //  exesice 3
 
-async function exes3() {
+export async function exes3() {
 
-    const currentTimeStemp= new Date().now();
-    await writeFile("./log-3.txt",JSON.stringify(currentTimeStemp));
-}
+    try{
 
-exes3();
+        const currentTimeStemp= new Date().getTime();
+        await writeFile("./twentyexesices/log-3.txt",JSON.stringify(currentTimeStemp));
+    }
+    catch(err) {
+        console.log(err)
+
+    }
+    }
+
+
+
+
+

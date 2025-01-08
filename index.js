@@ -1,6 +1,8 @@
 
 import fs from "node:fs/promises";
 import Excel from "exceljs";
+import {exes1,exes2,exes3} from "./twentyexesices/twenty-quiz.js";
+
 
 
 
@@ -53,6 +55,31 @@ catch(err) {
 }
 
 calculateEvgFromExcel();
+
+
+
+
+//********************************************** */
+                     //  twentyexesices
+
+  exes1();
+  exes2();
+  exes3();
+
+
+
+
+
+
+
+
+
+
+
+ 
+               
+                     
+
 
  
                
