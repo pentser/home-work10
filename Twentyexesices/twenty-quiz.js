@@ -187,6 +187,47 @@ export async function exes10() {
     }
     }
 
+//*********************************************** */
+//  exesice 11
+
+export async function exes11() {
+
+    try{
+
+        const data= 
+        {
+            "id": 1,
+            "name": "Leanne Graham",
+            "username": "Bret",
+            "email": "Sincere@april.biz",
+            "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+            "lat": "-37.3159",
+            "lng": "81.1496"
+            }
+            },
+            "phone": "1-770-736-8031 x56442",
+            "website": "hildegard.org",
+            "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+            }
+            }
+
+        await writeFile("./twentyexesices/data.json",JSON.stringify(data));
+    }
+    catch(err) {
+        console.log("exes11: " + err.message)
+
+    }
+    }
+
+
 
 
 
