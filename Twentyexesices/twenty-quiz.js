@@ -110,7 +110,8 @@ export async function exes6() {
 //  exesice 7
  export function exes7() {
 
-
+     //? add precondition 
+    
      unlink('./twentyexesices/temp-7.txt',(err=>{
         if(err) console.log(err);
         else {
@@ -124,6 +125,7 @@ export async function exes6() {
 
  //*********************************************** */
 //  exesice 8
+//? precondition 
 export async function exes8() {
 
 
@@ -260,6 +262,60 @@ export async function exes12() {
     }
     
 }
+
+
+ //*********************************************** */
+//  exesice 14
+export async function exes14() {
+    //? precondition 
+
+    try {
+
+        await rename('./twentyexesices/testDir/fileA.txt','./twentyexesices/backup/fileA.txt');
+        
+
+     }
+    
+    catch(err) {
+        console.log("exes14: " + err.message)
+
+    }
+}
+
+
+
+
+//*********************************************** */
+//  exesice 15
+export async function exes15() {
+
+
+    try {
+
+        const files=await readdir('./twentyexesices/testDir');
+        await files.forEach(function (file) {
+            if(file.includes("tempFiles")) {              
+                /***************************************** */
+
+                unlink("./twentyexesices/testDir/" + file,(err=>{
+                    if(err) console.log(err);
+                    else {
+                        console.log("Deleted File")
+                    }  
+                 }));
+
+                /*************************************** */
+            }
+        }) 
+     }
+
+    catch(err) {
+        console.log("exes15: " + err.message)
+
+    }
+    }
+
+
 
 
 
