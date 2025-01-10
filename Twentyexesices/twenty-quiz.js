@@ -228,6 +228,42 @@ export async function exes11() {
     }
 
 
+//*********************************************** */
+//  exesice 12
+export async function exes12() {
+
+
+    try{
+
+        const data =await readFile('./twentyexesices/data.json','utf8');
+        console.log(JSON.parse(data));
+    }
+    catch(err) {
+        console.log("exes12: " + err.message)
+
+    }
+ }
+
+
+
+//*********************************************** */
+//  exesice 13
+ export async function exes13() {
+    
+    try {
+        const data=await readFile("./twentyexesices/source.txt","utf8");
+        await writeFile("./twentyexesices/destination.txt", JSON.stringify(data));
+       
+    }
+    catch (err) {
+        console.log("exes13: " + err.message)
+    }
+    
+}
+
+
+
+
 
 
 
