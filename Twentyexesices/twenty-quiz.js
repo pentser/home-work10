@@ -1,6 +1,6 @@
 //*********************************************** */
 //  exesice 1
-import { readFile, writeFile, mkdir,rename ,readdir} from "node:fs/promises";
+import { readFile, writeFile, mkdir,rename ,readdir,watch,stat,open} from "node:fs/promises";
 import {createReadStream,existsSync ,unlink} from "node:fs";
 import readline from "node:readline/promises"
 
@@ -314,6 +314,121 @@ export async function exes15() {
 
     }
     }
+
+    
+ //*********************************************** */
+//  exesice 16
+export async function exes16() {
+
+    try {
+
+           const monitor= await watch('./twentyexesices/');
+
+           //******************** */
+           //monitor 5000 ms......
+           setTimeout(()=>{
+            exes2();
+           },5000)
+           //******************** */
+          
+
+           
+           console.log("changes:" + monitor.next().then(res=>{
+            console.log(res)
+           }))
+        
+     }
+    
+    catch(err) {
+        console.log("exes16: " + err.message)
+
+    }
+    }
+
+
+
+    //*********************************************** */
+//  exesice 17
+ export async function exes17() {
+    
+    try {
+        const stats = await stat("./twentyexesices/bigFile-17.txt")  
+        console.log("file size:(MB): " +(stats.size /(1024*1024)).toFixed(3));
+    }
+    catch (err) {
+        console.log("exes17: " + err.message)
+    }
+    
+}
+
+//*********************************************** */
+//  exesice 18
+export async function exes18() {
+    
+    try {
+     
+        await open("./twentyexesices/multipleFiles/file1.txt","w");
+        await open("./twentyexesices/multipleFiles/file2.txt","w");
+        await open("./twentyexesices/multipleFiles/file3.txt","w");
+        
+    }
+    catch(err) {
+        
+        console.log("exes18: " +err.message);
+        
+    }
+}
+
+//*********************************************** */
+//  exesice 19
+export async function exes19() {
+
+
+    try {
+
+        const files=await readdir('./twentyexesices/multipleFiles/');
+        let count=0;
+        await files.forEach(function (file,i) {
+           // console.log(file,i); 
+            count++;
+        });
+
+        console.log("files counts: " + count)
+        
+     }
+
+    catch(err) {
+        console.log("exes19: " + err.message)
+
+    }
+    }
+
+    //*********************************************** */
+//  exesice 20
+export async function exes20() {
+    
+    try {
+       
+        const data1 = await readFile("./twentyexesices/data-20-1.txt","utf-8");
+        const data2 = await readFile("./twentyexesices/data-20-2.txt","utf-8");
+        await writeFile("./twentyexesices/data-20-3.txt",JSON.stringify(data1 + data2));
+    } 
+    
+    catch(err) {
+        
+        console.log("exes20: " +err.message);
+        
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 

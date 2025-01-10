@@ -3,7 +3,8 @@ import fs from "node:fs/promises";
 import Excel from "exceljs";
 import {exes1,exes2,exes3,exes4,exes5,
         exes6,exes7,exes8,exes9,exes10,
-        exes11,exes12,exes13,exes14,exes15} 
+        exes11,exes12,exes13,exes14,exes15,
+        exes16,exes17,exes18,exes19,exes20} 
         from "./twentyexesices/twenty-quiz.js";
 
 
@@ -77,7 +78,12 @@ calculateEvgFromExcel();
   // exes12();
   // exes13();
   //exes14();
-  exes15();
+ // exes15();
+ //exes16();
+ //exes17();
+ //exes18();
+ //exes19();
+ exes20();
  
 
 
